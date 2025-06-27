@@ -74,18 +74,18 @@ python manage.py generate_data --categories 5 --products 20
 ```
 ## 📁 Структура проекта
 - hw-django-project/
-- ├── myproject/            # Настройки Django
+- ├── myproject/            
 - │   ├── settings.py
 - │   ├── urls.py
 - │   └── ...
-- ├── store_app/            # Приложение
+- ├── store_app/            
 - │   ├── models.py
 - │   ├── admin.py
-- │   └── management/       # Кастомные команды
+- │   └── management/       
 - │       └── commands/
 - │           └── generate_data.py
 - ├── manage.py
-- ├── pyproject.toml        # Настройки Poetry
-- ├── poetry.lock           # Версии установленных пакетов
-- ├── .gitignore            # Файлы, исключённые из версии
-- └── README.md             # Это описание
+- ├── pyproject.toml        
+- ├── poetry.lock           
+- ├── .gitignore            
+- └── README.md             
