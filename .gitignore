@@ -1,0 +1,68 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+*.py[cod]
+*$pyclass*.*
+.pycache/
+
+# Django
+/media/
+/static/
+/assets/
+/.env
+.env
+.envs
+.local
+.sass-cache/
+ celerybeat-schedule
+*.sqlite3
+
+# Virtual Environment
+/venv/
+/env/
+/.venv
+virtualenv/
+env/
+ENV/
+.pyenv/
+.python-version
+__pypackages__
+
+# Poetry
+/.cache/pypoetry/virtualenvs
+
+# migrations
+/store_app/migrations/
+!important_migration_file.py
+
+# IDE / Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs and databases
+*.log
+*.sqlite3
+*.sql
+*.db
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+Icon?
