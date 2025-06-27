@@ -53,6 +53,11 @@ poetry env activate
 $ACTIVATE_CMD = poetry env activate | Out-String
 Invoke-Expression $ACTIVATE_CMD
 ```
+## 🧬 Генерация тестовых данных
+Вы можете автоматически создать тестовые данные:
+```powershell
+python manage.py generate_data --categories 5 --products 20
+```
 ### 6. Выполните миграции
 ```powershell
 python manage.py migrate
@@ -67,11 +72,6 @@ python manage.py runserver
 ```
 Откройте браузер: http://127.0.0.1:8000/admin
 
-## 🧬 Генерация тестовых данных
-Вы можете автоматически создать тестовые данные:
-```powershell
-python manage.py generate_data --categories 5 --products 20
-```
 ## 📁 Структура проекта
 - hw-django-project/
 - ├── myproject/            
