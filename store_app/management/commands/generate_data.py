@@ -1,30 +1,32 @@
-from django.core.management.base import BaseCommand
-from store_app.models import Category, Product
 import random
 import factory
 from decimal import Decimal
+from django.core.management.base import BaseCommand
+from store_app.models import Category, Product
+from faker import Faker
 
+fake = Faker()
 
 class CategoryFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Category
 
-    name = factory.Faker('word')
-    description = factory.Faker('sentence')
+    name = factory.LazyFunction(lambda: fake.word())
+    description = factory.LazyFunction(lambda: fake.sentence())
 
 
 class ProductFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Product
 
-    name = factory.Faker('catch_phrase')
-    description = factory.Faker('paragraph')
+    name = factory.LazyFunction(lambda: fake.catch_phrase())
+    description = factory.LazyFunction(lambda: fake.paragraph())
     price = factory.LazyFunction(lambda: Decimal(round(random.uniform(10, 1000), 2)))
     category = factory.SubFactory(CategoryFactory)
 
 
 class Command(BaseCommand):
-    help = 'Генерирует тестовые данные для Category и Product'
+    help = 'Генерирует тестовые данные'
 
     def add_arguments(self, parser):
         parser.add_argument('--categories', type=int, default=5, help='Количество категорий')
